@@ -1,0 +1,5 @@
+import { people, Users } from '../../../data/people';
+
+export default function handler (req, res) {
+    res.status(200).json(Users)
+}

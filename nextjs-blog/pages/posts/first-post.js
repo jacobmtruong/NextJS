@@ -6,8 +6,9 @@ export default function FirstPost() {
     const [names, setNames] = useState([])
 
     const fetchNames = async() => {
-        const res = await fetch('/api/hello')
+        const res = await fetch('/api/people')
         const data = await res.json()
+        console.log(data);
         setNames(data)
     }
 
