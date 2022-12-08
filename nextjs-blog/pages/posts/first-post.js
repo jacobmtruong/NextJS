@@ -14,12 +14,15 @@ export default function FirstPost() {
 
 
     return (
-        <>
-            <h1>First Post</h1>;
+        <div style={{margin: 'auto', width: "fit-content"}}>
+            <h1>First Post</h1>
 
             <Link href='/'>Back to Home</Link>
 
-            <button onClick={fetchNames}>Load People Names</button>
+            <br />
+
+            <button onClick={fetchNames}>Click here to fertch names</button> 
+
 
             {
                 names.map((name, i) => {
@@ -30,6 +33,6 @@ export default function FirstPost() {
                     )
                 })
             }
-        </>
+        </div>
     )
 }
