@@ -5,6 +5,8 @@ export default function FirstPost() {
 
     const [names, setNames] = useState([])
 
+    const [person, setPerson] = useState('')
+
     const fetchNames = async() => {
         const res = await fetch('/api/people')
         const data = await res.json()
@@ -13,9 +15,27 @@ export default function FirstPost() {
     }
 
 
+    const submitPerson = async() => {
+        const response = await fetch ('/api/people', {
+            method: 'POST',
+            body: JSON.stringify({ person }),
+            headers: {
+                'Conten-Type': 'application/json'
+            }
+        })
+        const data = await response.json()
+        console.log(data);
+    }
+ 
+
 
     return (
         <div style={{margin: 'auto', width: "fit-content"}}>
+            <input type="text" value={person} onChange={(e) => setPerson(e.target.value)} />
+
+            <button onClick={submitPerson}>Submit Person</button>
+
+
             <h1>First Post</h1>
 
             <Link href='/'>Back to Home</Link>
