@@ -19,9 +19,9 @@ export default function FirstPost() {
         e.preventDefault()
         const response = await fetch('/api/people', {
             method: 'POST',
-            body: JSON.stringify({ person }),
+            body: JSON.stringify({person}),
             headers: {
-                'Conten-Type': 'application/json'
+                'Content-Type': 'application/json'
             }
         })
         const data = await response.json()
