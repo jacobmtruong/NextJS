@@ -13,5 +13,5 @@ export const people = [
       id: 3,
       name: "Jake",
       age: 28
-    }
+    },
 ]
