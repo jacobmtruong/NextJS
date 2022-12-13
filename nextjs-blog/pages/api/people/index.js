@@ -16,24 +16,4 @@ export default function handler(req, res) {
     }
 }
 
-// export default function handler(req, res) {
-//     const { method } = req
-//     switch(method) {
-//         case "GET":
-//             res.status(200).json(people)
-//             break;
-//         case "POST": 
-//             const {name} = req.body
-//             people.push({
-//                 id: people.length + 1,
-//                 name: name
-//             })
-//             res.status(200).json(people)
-//             break;
-//         default:
-//             res.setHeader("Allow", ["GET","POST"]);
-//             res.status(405).end(`Method ${method} Not Allowed`);
-//             break;
-//     }
-// }
 
