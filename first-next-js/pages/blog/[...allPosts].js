@@ -1,13 +1,12 @@
 import { useRouter } from "next/router";
 
-export default function GivenClientPage() {
+export default function AllBlogPostsPage() {
   const router = useRouter();
 
   console.log(router.query);
-
   return (
-    <div>
-      <h1>Specific Given Client Page</h1>
-    </div>
+    <>
+      <h1>All Blog Posts Here</h1>
+    </>
   );
 }
