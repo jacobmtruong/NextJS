@@ -1,30 +1,62 @@
-const randomDate = new Date();
-
 const events = [
   {
-    id: 1,
-    name: "Networking for Introverts",
-    date: randomDate,
-    address: {
-      street: "New Wall Street 5",
-      city: "New York",
-      zipcode: 98765,
-    },
+    id: "e1",
+    title: "Programming for everyone",
+    description:
+      "Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.",
+    location: "Somestreet 25, 12345 San Somewhereo",
+    date: "2021-05-12",
     image:
-      "https://www.strety.com/hubfs/images/blog/run-an-effective-team-meeting.png",
+      "https://www.nordantech.com/media/pages/blog/community/8-tipps-fuer-ein-erfolgreiches-meeting/00022d9063-1643812301/meeting-tipps-erfolgreich-1200x630.jpg",
+    isFeatured: false,
   },
   {
-    id: 2,
-    name: "Networking for Extroverts",
-    date: randomDate,
-    address: {
-      street: "My Street 12",
-      city: "Broke City",
-      zipcode: 10115,
-    },
+    id: "e2",
+    title: "Networking for introverts",
+    description:
+      "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
+    location: "New Wall Street 5, 98765 New Work",
+    date: "2021-05-30",
     image:
-      "https://assets-global.website-files.com/62196607bf1b46c300301846/62196607bf1b46a1ce30228b_purpose-of-team-meeting.jpg",
+      "https://www.strety.com/hubfs/images/blog/run-an-effective-team-meeting.png",
+    isFeatured: true,
+  },
+  {
+    id: "e3",
+    title: "Networking for extroverts",
+    description:
+      "You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.",
+    location: "My Street 12, 10115 Broke City",
+    date: "2022-04-10",
+    image:
+      "https://assets-global.website-files.com/62196607bf1b46c300301846/62196607bf1b46ebfb301f19_5f5bc69416e7fb495275b378_how%2520leaders%2520run%2520meetings%2520tips%2520from%2520top%2520execs.jpeg",
+    isFeatured: true,
   },
 ];
+
+export function getFeaturedEvents() {
+  return DUMMY_EVENTS.filter((event) => event.isFeatured);
+}
+
+export function getAllEvents() {
+  return DUMMY_EVENTS;
+}
+
+export function getFilteredEvents(dateFilter) {
+  const { year, month } = dateFilter;
+
+  let filteredEvents = DUMMY_EVENTS.filter((event) => {
+    const eventDate = new Date(event.date);
+    return (
+      eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+    );
+  });
+
+  return filteredEvents;
+}
+
+export function getEventById(id) {
+  return DUMMY_EVENTS.find((event) => event.id === id);
+}
 
 export default events;

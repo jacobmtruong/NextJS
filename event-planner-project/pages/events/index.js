@@ -21,11 +21,9 @@ export default function AllEvents() {
                   style={{ width: "300px" }}
                 />
 
-                <h3>{e.name}</h3>
-                <p>{e.date.toDateString()}</p>
-                <p>{e.address.street}</p>
-                <p>{e.address.city}</p>
-                <p>{e.address.zipcode}</p>
+                <h3>{e.title}</h3>
+                <p>{e.date}</p>
+                <p>{e.location}</p>
                 <button>Explore Event</button>
               </div>
             </li>
