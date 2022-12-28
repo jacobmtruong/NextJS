@@ -14,8 +14,15 @@ export default function EventItem(props) {
   const exploreLink = `/events/${id}`;
 
   return (
-    <li key={id}>
-      <img src={image} alt="event photo" />
+    <li
+      key={id}
+      style={{
+        border: "1px solid black",
+        padding: "30px",
+        width: "fit-content",
+      }}
+    >
+      <img src={image} alt="event photo" style={{ width: "300px" }} />
       <div>
         <div>
           <h2>{title}</h2>
