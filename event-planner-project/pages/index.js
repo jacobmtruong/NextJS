@@ -1,17 +1,7 @@
-import { useRouter } from "next/router";
+import EventList from "../components/events/events-list";
+import { getFeaturedEvents } from "../events";
 
 export default function Home() {
-  const router = useRouter();
-
-  const allEventsHandler = () => {
-    router.push({
-      pathname: "/events",
-    });
-  };
-  return (
-    <>
-      <h1>HOMEPAGE</h1>
-      <button onClick={allEventsHandler}>See All Events</button>
-    </>
-  );
+  const featuredEvents = getFeaturedEvents();
+  return <EventList items={featuredEvents} />;
 }

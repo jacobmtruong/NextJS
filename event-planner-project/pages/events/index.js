@@ -1,6 +1,7 @@
-import events from "../../events";
+import { getFeaturedEvents } from "../../events";
 
 export default function AllEvents() {
+  const events = getFeaturedEvents();
   return (
     <>
       <h1>All Events Page</h1>
